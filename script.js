@@ -38,6 +38,10 @@ $(document).ready(function() {
         'background': `${gradient[1]}`,
         'color': `${gradient[0]}`
     });
+
+    $('.footer').css({
+        'color': `${gradient[0]}`
+    });
     let windowWidth = $(window).width()
     if (windowWidth >= 500) {
         $('.date').css({
@@ -110,6 +114,9 @@ $(document).ready(function() {
 
         $('#updateColor').css({
             'background': `${gradient[1]}`,
+            'color': `${gradient[0]}`
+        });
+        $('.footer').css({
             'color': `${gradient[0]}`
         });
 
