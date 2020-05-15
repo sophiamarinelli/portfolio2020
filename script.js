@@ -1,4 +1,44 @@
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+
+}
+
+
+
 $(document).ready(function() {
+    let gradient = [];
+    for (var i = 0; i < 3; i++) {
+        var value = getRandomColor();
+        gradient.push(value);
+        console.log(gradient[0])
+    }
+
+    $('.caption').css({
+        'background': `${gradient[0]}`,
+        'color': `${gradient[1]}`
+    });
+
+    $('.date').css({
+        'color': `${gradient[0]}`
+    });
+
+    $('a').css({
+        'color': `${gradient[1]}`
+    });
+
+    $('.header').css({
+        'background': `${gradient[0]}`,
+        'color': `${gradient[1]}`
+    });
+
+    $('body').css({
+        'background': `${gradient[1]}`
+    });
 
     let windowWidth = $(window).width()
 
