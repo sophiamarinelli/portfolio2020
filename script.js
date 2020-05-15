@@ -1,30 +1,49 @@
-var slideIndex = [1,1,1,1,1,1,1,1,1];
-var slideId = ["mySlides1", "mySlides2", "mySlides3", "mySlides4", "mySlides5", "mySlides6", "mySlides7", "mySlides8","mySlides9"]
-showSlides(1, 0);
-showSlides(1, 1);
-showSlides(1, 2);
-showSlides(1, 3);
-showSlides(1, 4);
-showSlides(1, 5);
-showSlides(1, 6);
-showSlides(1, 7);
-showSlides(1, 8);
+$(document).ready(function() {
 
-function plusSlides(n, no) {
-  showSlides(slideIndex[no] += n, no);
-}
+    $('.caption').on('click tap swipe', function() {
+        var randomX = Math.floor((Math.random() * 200));
+        var randomY = Math.floor((Math.random() * 200));
+        var sibcount = $(this).siblings().children('.project-image:visible').length;
+        var count = $(this).children('.project-image:hidden').length;
+        var latest = $(this).children('.project-image:hidden:first');
+        var src = $(this).children('.project-image:hidden:first').data('src');
+        if (sibcount >= 1) {
+            $(this).siblings().children('img').hide();
+            latest.attr('src', src).css({ 'z-index': '99', 'top': `${randomX}px`, 'left': `${randomY}px` }).show();
+        } else if (count >= 1) {
+            latest.attr('src', src).css({ 'z-index': '99', 'top': `${randomX}px`, 'left': `${randomY}px` }).show();
+        } else {
+            $(this).children('img, video').hide();
+        }
+    });
 
-function showSlides(n, no) {
-  var i;
-  var x = document.getElementsByClassName(slideId[no]);
-  if (n > x.length) {slideIndex[no] = 1}    
-  if (n < 1) {slideIndex[no] = x.length}
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";  
-  }
-  x[slideIndex[no]-1].style.display = "block";  
-}
+    $('.close').on('click tap swipe', function() {
+        //create button to close out, have it appear using conditional
+    })
+    // $('.header').click(function() {
+    //     $('.header').toggleClass('rotated');
+    // });
+    // $('#psychic').click(function() {
+    //     var psychic = ['assets/psychic/DocumentationPages.png', 'assets/psychic/DocumentationPages2.png', 'assets/psychic/DocumentationPages3.png', 'assets/psychic/DocumentationPages4.png'];
+    //     let picDiv = 0
+    //     if (picDiv === 0) {
+    //         $.each(psychic, function(i) {
 
-document.getElementById('header').onclick = function(event) {
-   document.getElementById('header').className = "hide";
-}
+    //             var randomX = Math.floor((Math.random() * 500));
+    //             var randomY = Math.floor((Math.random() * 500));
+    //             picDiv = $('.pic').add("div");
+
+    //             $(`<img class="images" src=${this}>`).appendTo(picDiv).css({
+    //                 'position': 'absolute',
+    //                 'left': randomX + 'px',
+    //                 'top': randomY + 'px',
+    //                 'width': '1000px',
+    //                 'height': 'auto',
+    //             })
+    //             console.log(this)
+    //         })
+    //     } else {
+    //         $('.pic').remove();
+    //     }
+    // })
+});
