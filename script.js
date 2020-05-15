@@ -15,16 +15,10 @@ $(document).ready(function() {
     for (var i = 0; i < 3; i++) {
         var value = getRandomColor();
         gradient.push(value);
-        console.log(gradient[0])
     }
-
     $('.caption').css({
         'background': `${gradient[0]}`,
         'color': `${gradient[1]}`
-    });
-
-    $('.date').css({
-        'color': `${gradient[0]}`
     });
 
     $('a').css({
@@ -40,9 +34,15 @@ $(document).ready(function() {
         'background': `${gradient[1]}`
     });
 
+    $('#updateColor').css({
+        'background': `${gradient[1]}`,
+        'color': `${gradient[0]}`
+    });
     let windowWidth = $(window).width()
-
     if (windowWidth >= 500) {
+        $('.date').css({
+            'color': `${gradient[0]}`
+        });
         $('.caption').on('click tap swipe', function() {
             console.log('trigger')
             var randomX = Math.floor((Math.random() * 200));
@@ -62,9 +62,60 @@ $(document).ready(function() {
             }
         });
     } else {
+        $('.date').css({
+            'color': `${gradient[1]}`
+        });
         $('.project-image').css({ 'display': 'block', 'position': 'static' })
 
     }
+
+
+
+    $('#updateColor').on('click', function() {
+        getRandomColor();
+        console.log(getRandomColor())
+        let gradient = [];
+        for (var i = 0; i < 3; i++) {
+            var value = getRandomColor();
+            gradient.push(value);
+        }
+
+        if (windowWidth >= 500) {
+            $('.date').css({
+                'color': `${gradient[0]}`
+            });
+        } else {
+            $('.date').css({
+                'color': `${gradient[1]}`
+            });
+        }
+
+        $('.caption').css({
+            'background': `${gradient[0]}`,
+            'color': `${gradient[1]}`
+        });
+
+        $('a').css({
+            'color': `${gradient[1]}`
+        });
+
+        $('.header').css({
+            'background': `${gradient[0]}`,
+            'color': `${gradient[1]}`
+        });
+
+        $('body').css({
+            'background': `${gradient[1]}`
+        });
+
+        $('#updateColor').css({
+            'background': `${gradient[1]}`,
+            'color': `${gradient[0]}`
+        });
+
+
+    })
+
 
     $('.close').on('click tap swipe', function() {
         //create button to close out, have it appear using conditional
