@@ -91,10 +91,12 @@ body {
 img {
     vertical-align: middle;
     width: 100%;
+    margin-top: 20px;
 }
 
 video {
     width: 100%;
+    margin-top: 20px;
 
 }
 
@@ -107,14 +109,13 @@ video {
 }
 
 .caption {
-    width: 60%;
+    width: 80%;
     font-size: 1.3em;
     background: black;
     padding: 30px;
     color: gray;
     border-radius: 40px;
     margin-top: 10px;
-    cursor: e-resize;
 }
 
 .caption:hover {
@@ -175,23 +176,20 @@ a:hover {
 
 .project-image {
     display: none;
-    position: fixed;
+    /*    position: fixed;
     top: 0;
     left: 0;
     width: 80%;
     height: 80%;
-    object-fit: contain;
-}
-
-.project-image:hover {
-    cursor: e-resize;
+    object-fit: contain;*/
 }
 
 #updateColor {
-    padding-bottom: 5px;
+    /*    padding-bottom: 5px;
     padding-top: 5px;
     margin-top: 5px;
-    border-radius: 20px;
+    border-radius: 20px;*/
+    text-decoration: underline;
 }
 
 .footer {
@@ -204,6 +202,7 @@ a:hover {
     margin-top: 10px;
     font-size: .8em;
     text-transform: uppercase;
+    color: black;
 }
 
 @media only screen and (max-width: 768px) {
