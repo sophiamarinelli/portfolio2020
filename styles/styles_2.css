@@ -84,7 +84,7 @@
 body {
     width: 100%;
     height: 100vh;
-    background: gray;
+    background: white;
 }
 
 
@@ -111,16 +111,16 @@ video {
 .caption {
     width: 80%;
     font-size: 1.3em;
-    background: black;
+    background: white;
     padding: 30px;
-    color: gray;
-    border-radius: 40px;
+    color: black;
+/*    border-radius: 40px;*/
     margin-top: 10px;
 }
 
 .caption:hover {
-    background: gray;
-    color: black;
+    background: black;
+    color: white;
 }
 
 
@@ -140,11 +140,11 @@ video {
 }
 
 a {
-    color: gray;
+    color: black;
 }
 
 a:hover {
-    color: gray;
+    color: black;
     text-decoration: underline;
 }
 
@@ -158,20 +158,20 @@ a:hover {
     padding-top: 30px;
     padding-bottom: 0px;
     z-index: 1;
-    /*    border: 1px solid black;*/
     width: 24%;
-    height: 95vh;
-    border-radius: 80px;
-    background: black;
-    color: gray;
+    height: 93vh;
+    background: white;
+    color: black;
     font-size: 1.3em;
 
 
 }
 
 .center {
-    text-align: center;
-    margin: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    /*    text-align: center;
+    margin: auto;*/
 }
 
 .project-image {
@@ -202,7 +202,7 @@ a:hover {
     margin-top: 10px;
     font-size: .8em;
     text-transform: uppercase;
-    color: black;
+    color: white;
 }
 
 @media only screen and (max-width: 768px) {
@@ -254,12 +254,12 @@ a:hover {
     }
 
     .caption:hover {
-        background: black;
-        color: gray;
+        background: white;
+        color: black;
     }
 
     .date {
         position: static;
         padding-left: 10px;
-        color: gray;
+        color: black;
     }
